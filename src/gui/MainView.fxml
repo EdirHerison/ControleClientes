@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="488.0" prefWidth="630.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18">
+   <children>
+      <Pane prefHeight="488.0" prefWidth="630.0">
+         <children>
+            <VBox layoutY="-2.0" prefHeight="497.0" prefWidth="637.0">
+               <children>
+                  <MenuBar prefHeight="4.0" prefWidth="587.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Cleintes">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Cadastrar" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Vendedor">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Cadastrar" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Venda">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Nova Venda" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
