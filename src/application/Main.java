@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
+	
+	private static Scene scene;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -15,15 +18,18 @@ public class Main extends Application {
 			ScrollPane scrollpane = loader.load();
 			scrollpane.setFitToHeight(true);
 			scrollpane.setFitToWidth(true);
-			Scene scene = new Scene(scrollpane);
+			scene = new Scene(scrollpane);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Controle de Clientes Rommanel");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+			
+	}
+	
+	public static Scene getScene() {
+		return scene;
 	}
 	
 	public static void main(String[] args) {
