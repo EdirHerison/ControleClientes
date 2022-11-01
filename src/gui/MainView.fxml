@@ -14,21 +14,18 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Cleintes">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Cadastrar" />
-                        <MenuItem mnemonicParsing="false" text="Consultar" />
-                        <MenuItem mnemonicParsing="false" text="Atualizar" />
+                    <MenuItem fx:id="menuItemCadCliente" mnemonicParsing="false" onAction="#onMenuItemCadClienteAction" text="Cadastrar" />
+                        <MenuItem fx:id="menuItemConsCliente" mnemonicParsing="false" onAction="#onMenuItemConsClienteAction" text="Consultar" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Vendedor">
                   <items>
-                        <MenuItem mnemonicParsing="false" text="Cosnsultar" />
-                    <MenuItem mnemonicParsing="false" text="Inserir" />
+                    <MenuItem fx:id="menuItemVendedor" mnemonicParsing="false" onAction="#onMenuItemVendedorAction" text="Dados" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Venda">
                   <items>
                     <MenuItem fx:id="menuItemNovaVenda" mnemonicParsing="false" onAction="#onMenuItemNovaVendaAction" text="Nova" />
-                        <MenuItem fx:id="menuItemModificarVenda" mnemonicParsing="false" onAction="#onMenuItemModifcaVendaAction" text="Modificar venda" />
                   </items>
                 </Menu>
               </menus>

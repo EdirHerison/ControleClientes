@@ -18,31 +18,30 @@ import javafx.scene.layout.VBox;
 
 public class MainViewController implements Initializable{
 	@FXML
-	private MenuItem menuItemCliente;
+	private MenuItem menuItemCadCliente;
+	@FXML
+	private MenuItem menuItemConsCliente;
 	@FXML
 	private MenuItem menuItemVendedor;
 	@FXML
 	private MenuItem menuItemNovaVenda;
-	@FXML
-	private MenuItem menuItemModificarVenda;
 	
 	
-	public void onMenuItemClienteAction() {
-		
+	public void onMenuItemCadClienteAction() {
+		carregaTela("/gui/CadCliFormView.fxml");
+	}
+	public void onMenuItemConsClienteAction() {
+		carregaTela("/gui/ConsCliTabView.fxml");
 	}
 	
     public void onMenuItemVendedorAction() {
-		
+		carregaTela("/gui/VendedorFormView.fxml");
 	}
     
     public void onMenuItemNovaVendaAction() {
     	carregaTela("/gui/VendasFormView.fxml");
 	}
     
-    public void onMenuItemModifcaVendaAction() {
-    	System.out.println("Modificar venda");
-	}
-	
 	
 	private synchronized void carregaTela(String caminhoTela) {
 		/*
