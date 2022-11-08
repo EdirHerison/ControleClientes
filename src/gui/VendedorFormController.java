@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 
-public class VendedorController implements Initializable{
+public class VendedorFormController implements Initializable{
     @FXML
 	private Label LbId;
     @FXML
