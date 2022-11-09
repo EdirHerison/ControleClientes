@@ -24,7 +24,7 @@ public class ConsCliViewController implements Initializable{
 	private ObservableList<Clientes> cliList;
 	
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {	
+	public void initialize(URL url, ResourceBundle rb) {	
 		initializeNodes();
 	}
 
