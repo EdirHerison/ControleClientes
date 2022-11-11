@@ -1,55 +1,20 @@
 package model.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.List;
 
-import db.DB;
-import db.DBException;
+/*
+ * Feito como INTERFACE pois, é mais maleavel caso haja uma mudança de Banco de dados 
+ * siando de um SQL para um Postgress.
+ * ou ate mesmo de tecnologia
+ */
+
+
 import model.entities.Vendedor;
 
-public class VendedorDAO {
-	
-	private Connection conn;
-	
-	public VendedorDAO(Connection conn) {
-		this.conn = conn;
-	}
-	
-	public void CadastraCliente(Vendedor vendedor) {
-		PreparedStatement st = null;
-		ResultSet rs = null;
-		
-		try {
-			st = conn.prepareStatement("INSERT INTO vendedora "
-					+ "(COD_VENDEDORA, NOME, CPF) "
-					+ "VALUES "
-					+ "(?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
-			st.setInt(1, vendedor.getCodigo());
-			st.setString(2, vendedor.getNome());
-			st.setString(3, vendedor.getCpf());
-			
-			int linhasAfetadas = st.executeUpdate();
-			  if(linhasAfetadas > 0) {
-				  rs =st.getGeneratedKeys();
-				if(rs.next()) {
-					int id = rs.getInt(1);
-					vendedor.setId(id);
-				}
-			  } else {
-				  throw new DBException("Erro ao salvar !!, nenhuma linha foi afetada");
-			  }
-			
-		} catch (SQLException e) {
-			throw new DBException(e.getMessage());
-		}
-		finally {
-			DB.closeStatent(st);
-			DB.closeResultSet(rs);
-		}
-		
-	}
+public interface VendedorDAO {
 
+	void CadastraVendedor(Vendedor vendedor);
+	void consultaVendedor(Vendedor vendedor);
+	void modificarVendedor(Vendedor vendedor);
+	List<Vendedor> buscaTodosVendedor();
 }

@@ -15,7 +15,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
+import model.entities.Vendedor;
 import model.services.ClienteService;
+import model.services.VendedorService;
 
 
 public class MainViewController implements Initializable{
@@ -37,7 +39,7 @@ public class MainViewController implements Initializable{
 		/*
 		 * Expressão Lambda 
 		 * () - parametro da expressão: composto ( tipo + nome identificação)
-		 * -> {} - implenta a função, diz o que a expressão vai realizar
+		 * -> {} - implementa a função, diz o que a expressão vai realizar
 		 */
 		carregaTela("/gui/ConsCliTabView.fxml", (ConsCliViewController controller) -> {
 			controller.setClienteService(new ClienteService());
@@ -47,7 +49,11 @@ public class MainViewController implements Initializable{
 	
 	@FXML
     public void onMenuItemVendedorAction() {
-		carregaTela("/gui/VendedorFormView.fxml", x -> {});
+		carregaTela("/gui/VendedorFormView.fxml", (VendedorFormController controlle) -> {
+			controlle.setVendedorEntidade(new Vendedor());
+			controlle.setVendedorService(new VendedorService());
+			
+		});
 	}
     
 	@FXML

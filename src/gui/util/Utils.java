@@ -21,6 +21,7 @@ public class Utils {
 		return (Stage) ((Node) event.getSource()).getScene().getWindow();
 	}
 	
+	//converte o valor do Txt ou Label para inteiro
 	public static Integer tryParsetoInt (String str) {
 		try {
 			return Integer.parseInt(str);
